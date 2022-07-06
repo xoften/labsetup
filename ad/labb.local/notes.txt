@@ -1,0 +1,12 @@
+sevenkingdoms = labb
+north.sevenkingdoms = dev.labb
+essos.local = labbtest.local
+
+
+kingslanding = dc01
+winterfell = dc02
+meereen = dc03
+
+casterlyrock = srv01
+castelblack = srv02
+braavos = srv03
