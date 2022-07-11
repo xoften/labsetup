@@ -75,6 +75,9 @@ boxes = [
         target.vm.communicator = "winrm"
         target.vm.provision :shell, :path => "vagrant/Install-WMF3Hotfix.ps1", privileged: false
         target.vm.provision :shell, :path => "vagrant/ConfigureRemotingForAnsible.ps1", privileged: false
+        config.vm.provider "vmware_desktop" do |target|
+          target.vm.provision :shell, :path => "vagrant/FixSecondNetwork.ps1", privileged: false, args: box[:ip]
+        end
       else
         target.vm.communicator = "ssh"
       end

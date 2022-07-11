@@ -10,3 +10,47 @@ meereen = dc03
 casterlyrock = srv01
 castelblack = srv02
 braavos = srv03
+
+daenerys.targaryen = lukas.skeppsberg
+viserys.targaryen = frans.ekeas
+khal.drogo = sam.vallholm
+jorah.mormont = arvid.ramudde
+
+
+arya.stark = ines.loftorp
+eddard.stark = max.karlhammar
+catelyn.stark = selin.svarto
+robb.stark = elliot.ringlycke
+sansa.stark = signe.backhamn
+brandon.stark = douglas.backby
+rickon.stark = kim.stensson
+hodor = elvin.vallhem
+jon.snow = tyra.Norrqvist
+samwell.tarly = teodor.ragroth
+jeor.mormont = nova.fredkrok
+
+Labb.local
+tywin.lannister = vide.gustafsson
+jaime.lannister = ellinore.jonasson
+cersei.lannister = tomas.mansson
+tyron.lannister = sammy.holmberg
+robert.baratheon = kasper.nyman
+joffrey.baratheon = mats.berggren
+renly.baratheon = cornelis.forsberg
+stannis.baratheon = lotta.magnusson
+petyer.baelish = oscar.lindgren
+lord.varys = lilly.lundberg
+maester.pycelle = alexsander.blom
+
+OU's
+Vale = Management
+IronIslands = HR
+Riverlands = Development
+Crownlands = Finance
+Stormlands = Operations
+Westerlands = Interns
+Reach = Old
+Dorne = Test
+
+thewallserver = test_dev
+

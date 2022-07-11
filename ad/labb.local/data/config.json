@@ -177,10 +177,10 @@
                 ]
             },
             "acls" : {
-                "GenericAll_khal_viserys" : {"for": "sam.vallholm", "to": "frans.ekeas", "right": "GenericAll", "inheritance": "None"},
-                "GenericAll_spy_jorah" : {"for": "Testing", "to": "arvid.ramudde", "right": "GenericAll", "inheritance": "None"},
-                "GenericAll_khal_esc4" : {"for": "sam.vallholm", "to": "CN=ESC4,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=labbtest,DC=local", "right": "GenericAll", "inheritance": "None"},
-                "WriteProperty_petyer_domadmin" : {"for": "frans.ekeas", "to": "arvid.ramudde", "right": "WriteProperty", "inheritance": "All"}
+                "GenericAll_sam_frans" : {"for": "sam.vallholm", "to": "frans.ekeas", "right": "GenericAll", "inheritance": "None"},
+                "GenericAll_testing_arvid" : {"for": "Testing", "to": "arvid.ramudde", "right": "GenericAll", "inheritance": "None"},
+                "GenericAll_sam_esc4" : {"for": "sam.vallholm", "to": "CN=ESC4,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=labbtest,DC=local", "right": "GenericAll", "inheritance": "None"},
+                "WriteProperty_frans_domadmin" : {"for": "frans.ekeas", "to": "arvid.ramudde", "right": "WriteProperty", "inheritance": "All"}
             },
             "users" : {
                 "lukas.skeppsberg" : {
@@ -242,20 +242,20 @@
                 "global" : {
                     "Dev_Labb_A_Users" : {
                         "managed_by" : "max.karlhammar",
-                        "path" : "CN=Users,DC=North,DC=labb,DC=local"
+                        "path" : "CN=Users,DC=DEV,DC=labb,DC=local"
                     },
                     "Dev_Labb_R_Users" : {
                         "managed_by" : "nova.fredkrok",
-                        "path" : "CN=Users,DC=North,DC=labb,DC=local"
+                        "path" : "CN=Users,DC=DEV,DC=labb,DC=local"
                     },
                     "Dev_Labb_Special_Users" : {
                         "managed_by" : "nova.fredkrok",
-                        "path" : "CN=Users,DC=North,DC=labb,DC=local"
+                        "path" : "CN=Users,DC=DEV,DC=labb,DC=local"
                     }
                 },
                 "domainlocal" : {
                     "Management" : {
-                        "path" : "CN=Users,DC=North,DC=labb,DC=local"
+                        "path" : "CN=Users,DC=DEV,DC=labb,DC=local"
                     }
                 }
             },
@@ -265,8 +265,8 @@
                 ]
             },
             "acls" : {
-                "anonymous_rpc" : {"for": "NT AUTHORITY\\ANONYMOUS LOGON", "to": "DC=North,DC=labb,DC=local", "right": "ReadProperty", "inheritance": "All"},
-                "anonymous_rpc2" : {"for": "NT AUTHORITY\\ANONYMOUS LOGON", "to": "DC=North,DC=labb,DC=local", "right": "GenericExecute", "inheritance": "All"}
+                "anonymous_rpc" : {"for": "NT AUTHORITY\\ANONYMOUS LOGON", "to": "DC=DEV,DC=labb,DC=local", "right": "ReadProperty", "inheritance": "All"},
+                "anonymous_rpc2" : {"for": "NT AUTHORITY\\ANONYMOUS LOGON", "to": "DC=DEV,DC=labb,DC=local", "right": "GenericExecute", "inheritance": "All"}
             },
             "users" : {
                 "ines.loftorp" : {
@@ -276,7 +276,7 @@
                     "city"        : "-",
                     "description" : "Ines Löftorp",
                     "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "max.karlhammar" : {
                     "firstname"   : "Max",
@@ -285,7 +285,7 @@
                     "city"        : "-",
                     "description" : "Max Karlhammar",
                     "groups"      : ["Dev_Labb_A_Users", "Domain Admins"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "selin.svarto" : {
                     "firstname"   : "Selin",
@@ -294,7 +294,7 @@
                     "city"        : "-",
                     "description" : "Selin Svartö",
                     "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "elliot.ringlycke" : {
                     "firstname"   : "Elliot",
@@ -303,7 +303,7 @@
                     "city"        : "-",
                     "description" : "Elliot Ringlycke",
                     "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "signe.backhamn" : {
                     "firstname"   : "Signe",
@@ -312,7 +312,7 @@
                     "city"        : "-",
                     "description" : "Signe Backhamn",
                     "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "douglas.backby" : {
                     "firstname"   : "Douglas",
@@ -321,7 +321,7 @@
                     "city"        : "-",
                     "description" : "Douglas Bäckby",
                     "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "kim.stensson" : {
                     "firstname"   : "Kim",
@@ -330,7 +330,7 @@
                     "city"        : "-",
                     "description" : "Kim Stensson",
                     "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "elvin.vallhem" : {
                     "firstname"   : "elvin.vallhem",
@@ -339,7 +339,7 @@
                     "city"        : "-",
                     "description" : "Elvin Vallhem",
                     "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "tyra.Norrqvist" : {
                     "firstname"   : "Tyra",
@@ -348,7 +348,7 @@
                     "city"        : "-",
                     "description" : "Tyra Norrqvist",
                     "groups"      : ["Dev_Labb_A_Users", "Dev_Labb_R_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local",
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local",
                     "spns"        : ["HTTP/test.dev.labb.local"]
                 },
                 "teodor.ragroth" : {
@@ -358,7 +358,7 @@
                     "city"        : "-",
                     "description" : "Teodor Ragroth (Password : Snappie19#)",
                     "groups"      : ["Dev_Labb_R_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "nova.fredkrok" : {
                     "firstname"   : "Nova",
@@ -367,7 +367,7 @@
                     "city"        : "-",
                     "description" : "Nova Fredkrok",
                     "groups"      : ["Dev_Labb_R_Users", "Dev_Labb_Special_Users"],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local"
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
                 },
                 "sql_svc" : {
                     "firstname"   : "sql",
@@ -376,7 +376,7 @@
                     "city"        : "-",
                     "description" : "sql service",
                     "groups"      : [],
-                    "path"        : "CN=Users,DC=North,DC=labb,DC=local",
+                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local",
                     "spns"        : ["MSSQLSvc/srv02.dev.labb.local:1433","MSSQLSvc/srv02.dev.labb.local"]
                 }
             }
@@ -417,16 +417,16 @@
             "multi_domain_groups_member" : {
             },
             "acls" : {
-                "GenericAll_tywin_cersei" : {"for": "vide.gustafsson", "to": "tomas.mansson", "right": "GenericAll", "inheritance": "None"},
-                "GenericAll_varys_domadmin" : {"for": "lilly.lundberg", "to": "Domain Admins", "right": "GenericAll", "inheritance": "None"},
-                "GenericAll_stanis_dc" : {"for": "lotta.magnusson", "to": "dc01$", "right": "GenericAll", "inheritance": "None"},
-                "WriteProperty_petyer_domadmin" : {"for": "oscar.lindgren", "to": "Domain Admins", "right": "WriteProperty", "inheritance": "All"},
-                "self-self-membership-on-group_tyron_domadmin" : {"for": "sammy.holmberg", "to": "Domain Admins", "right": "Ext-Self-Self-Membership", "inheritance": "None"},
-                "writeproperty-self-membership_stanis_stannis" : {"for": "lotta.magnusson", "to": "Domain Admins", "right": "Ext-Write-Self-Membership", "inheritance": "All"},
-                "forcechangepassword_tywin_jaime" : {"for": "vide.gustafsson", "to": "ellinore.jonasson", "right": "Ext-User-Force-Change-Password", "inheritance": "None"},
-                "write_on_group_pycelle_domadmin" : {"for": "alexsander.blom", "to": "Domain Admins", "right": "WriteOwner", "inheritance": "None"},
-                "GenericWrite_on_user_jaimie_cersei" : {"for": "ellinore.jonasson", "to": "tomas.mansson", "right": "GenericWrite", "inheritance": "None"},
-                "Writedacl_tywin_council" : {"for": "vide.gustafsson", "to": "Labbtest_FIN_Users", "right": "WriteDacl", "inheritance": "None"}
+                "GenericAll_vide_tomas" : {"for": "vide.gustafsson", "to": "tomas.mansson", "right": "GenericAll", "inheritance": "None"},
+                "GenericAll_lilly_domadmin" : {"for": "lilly.lundberg", "to": "Domain Admins", "right": "GenericAll", "inheritance": "None"},
+                "GenericAll_lotta_dc" : {"for": "lotta.magnusson", "to": "dc01$", "right": "GenericAll", "inheritance": "None"},
+                "WriteProperty_oscar_domadmin" : {"for": "oscar.lindgren", "to": "Domain Admins", "right": "WriteProperty", "inheritance": "All"},
+                "self-self-membership-on-group_sammy_domadmin" : {"for": "sammy.holmberg", "to": "Domain Admins", "right": "Ext-Self-Self-Membership", "inheritance": "None"},
+                "writeproperty-self-membership_lotta_domadmin" : {"for": "lotta.magnusson", "to": "Domain Admins", "right": "Ext-Write-Self-Membership", "inheritance": "All"},
+                "forcechangepassword_vide_ellinore" : {"for": "vide.gustafsson", "to": "ellinore.jonasson", "right": "Ext-User-Force-Change-Password", "inheritance": "None"},
+                "write_on_group_alexsander_domadmin" : {"for": "alexsander.blom", "to": "Domain Admins", "right": "WriteOwner", "inheritance": "None"},
+                "GenericWrite_on_user_tomas_ellinore" : {"for": "ellinore.jonasson", "to": "tomas.mansson", "right": "GenericWrite", "inheritance": "None"},
+                "Writedacl_Labbtest_FIN_Users" : {"for": "vide.gustafsson", "to": "Labbtest_FIN_Users", "right": "WriteDacl", "inheritance": "None"}
             },
             "users" : {
                 "vide.gustafsson" : {
