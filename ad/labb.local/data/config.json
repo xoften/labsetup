@@ -4,84 +4,84 @@
         "dc01" : {
             "hostname" : "dc01",
             "type" : "dc",
-            "local_admin_password": "P@ssw0rd",
+            "local_admin_password": "8dCT-DJjgScp",
             "domain" : "labb.local",
             "path" : "DC=labb,DC=local",
             "local_groups" : {
                 "Administrators" : [
-                    "labb\\kasper.nyman",
-                    "labb\\tomas.mansson"
+                    "labb\\edward.duncan",
+                    "labb\\joe.peake"
                 ],
                 "Remote Desktop Users" : [
-                    "labb\\Labbtest_FIN_Users"
+                    "labb\\Group8"
                 ]
             }
         },
         "srv01" : {
             "hostname" : "srv01",
             "type" : "server",
-            "local_admin_password": "P@ssw0rd",
+            "local_admin_password": "EP+xh7Rk6j90",
             "domain" : "labb.local",
             "path" : "DC=labb,DC=local",
             "local_groups" : {
                 "Administrators" : [
-                    "labb\\vide.gustafsson",
-                    "labb\\ellinore.jonasson"
+                    "labb\\sean.coleman",
+                    "labb\\jamie.lannister"
                 ]
             },
             "Remote Desktop Users" : [
-                "labb\\Labbtest_A_Users"
+                "labb\\Lanister"
             ]
         },
         "dc02" : {
             "hostname" : "dc02",
             "type" : "dc",
-            "local_admin_password": "P@ssw0rd",
+            "local_admin_password": "NgtI75cKV+Pu",
             "domain" : "dev.labb.local",
             "path" : "DC=dev,DC=labb,DC=local",
             "local_groups" : {
                 "Administrators" : [
-                    "dev\\max.karlhammar",
-                    "dev\\selin.svarto",
-                    "dev\\elliot.ringlycke"
+                    "dev\\bella.bond",
+                    "dev\\alexandr.russell",
+                    "dev\\keith.morgan"
                 ],
                 "Remote Desktop Users" : [
-                    "dev\\Dev_Labb_A_Users"
+                    "dev\\Group3"
                 ]
             }
         },
         "srv02" : {
             "hostname" : "srv02",
             "type" : "server",
-            "local_admin_password": "P@ssw0rd",
+            "local_admin_password": "NgtI75cKV+Pu",
             "domain" : "dev.labb.local",
             "path" : "DC=dev,DC=labb,DC=local",
             "local_groups" : {
                 "Administrators" : [
-                    "dev\\nova.fredkrok"
+                    "dev\\donna.hughes"
                 ],
                 "Remote Desktop Users" : [
-                    "dev\\Dev_Labb_R_Users",
-                    "dev\\Dev_Labb_Special_Users",
-                    "dev\\Dev_Labb_A_Users"
+                    "dev\\Group4",
+                    "dev\\Group5",
+                    "dev\\Group3"
                 ]
             },
             "mssql":{
                 "sa_password": "Sup1_sa_P@ssw0rd!",
                 "svcaccount" : "sql_svc",
                 "sysadmins" : [
-                    "DEV\\tyra.Norrqvist"
+                    "dev\\molly.walsh"
                 ],
                 "executeaslogin" : {
-                    "DEV\\teodor.ragroth" : "sa"
+                    "dev\\bella.buckland" : "sa"
                 },
                 "executeasuser" : {
-                    "DEV\\ines.loftorp" : "dbo"
+                    "dev\\maria.lewis" : "dbo"
                 },
                 "linked_servers": {
-                    "srv03.labbtest.local" : {
+                    "srv03.prod.local" : {
                         "users_mapping": [
-                            {"local_login": "DEV\\tyra.Norrqvist","remote_login": "sa", "remote_password": "sa_P@ssw0rd!"}
+                            {"local_login": "dev\\molly.walsh","remote_login": "sa", "remote_password": "sa_P@ssw0rd!Ess0s"}
                         ]
                     }
                 }
@@ -90,46 +90,46 @@
         "dc03" : {
             "hostname" : "dc03",
             "type" : "dc",
-            "local_admin_password": "P@ssw0rd",
-            "domain" : "labbtest.local",
-            "path" : "DC=labbtest,DC=local",
+            "local_admin_password": "Ufe-bVXSx9rk",
+            "domain" : "prod.local",
+            "path" : "DC=prod,DC=local",
             "local_groups" : {
                 "Administrators" : [
-                    "labbtest\\lukas.skeppsberg"
+                    "prod\\abigail.biley"
                 ],
                 "Remote Desktop Users" : [
-                    "labbtest\\Labbtest_A_Users"
+                    "prod\\Group1"
                 ]
             }
         },
         "srv03" : {
             "hostname" : "srv03",
             "type" : "server",
-            "local_admin_password": "P@ssw0rd",
-            "domain" : "labbtest.local",
-            "path" : "DC=labbtest,DC=local",
+            "local_admin_password": "978i2pF43UJ-",
+            "domain" : "prod.local",
+            "path" : "DC=prod,DC=local",
             "local_groups" : {
                 "Administrators" : [
-                    "labbtest\\sam.vallholm"
+                    "prod\\lillian.morgan"
                 ]
             },
             "Remote Desktop Users" : [
-                "labbtest\\Labbtest_R_Users"
+                "prod\\Group2"
             ],
             "mssql":{
-                "sa_password": "sa_P@ssw0rd!",
+                "sa_password": "sa_P@ssw0rd!Ess0s",
                 "svcaccount" : "sql_svc",
                 "sysadmins" : [
-                    "LABBTEST\\sam.vallholm"
+                    "prod\\lillian.morgan"
                 ],
                 "executeaslogin" : {
-                    "LABBTEST\\arvid.ramudde" : "sa"
+                    "prod\\brandon.turner" : "sa"
                 },
                 "executeasuser" : {},
                 "linked_servers": {
                     "srv02.dev.labb.local" : {
                         "users_mapping": [
-                            {"local_login": "dev\\arvid.ramudde","remote_login": "sa", "remote_password": "Sup1_sa_P@ssw0rd!"}
+                            {"local_login": "dev\\brandon.turner","remote_login": "sa", "remote_password": "Sup1_sa_P@ssw0rd!"}
                         ]
                     }
                 }
@@ -137,87 +137,87 @@
         }
     },
     "domains" : {
-        "labbtest.local" : {
+        "prod.local" : {
             "dc": "dc03",
             "domain_password" : "Ufe-bVXSx9rk",
-            "netbios_name": "LABBTEST",
+            "netbios_name": "prod",
             "ca_server": "srv03",
             "trust" : "labb.local",
             "organisation_units" : {},
             "groups" : {
                 "universal" : {},
                 "global" : {
-                    "Labbtest_A_Users" : {
-                        "managed_by" : "frans.ekeas",
-                        "path" : "CN=Users,DC=labbtest,DC=local"
+                    "Group1" : {
+                        "managed_by" : "dominic.morgan",
+                        "path" : "CN=Users,DC=prod,DC=local"
                     },
-                    "Labbtest_R_Users" : {
-                        "managed_by" : "sam.vallholm",
-                        "path" : "CN=Users,DC=labbtest,DC=local"
+                    "Group2" : {
+                        "managed_by" : "lillian.morgan",
+                        "path" : "CN=Users,DC=prod,DC=local"
                     }
                 },
                 "domainlocal" : {
-                    "Management" : {
-                        "managed_by" : "lukas.skeppsberg",
-                        "path" : "CN=Users,DC=labbtest,DC=local"
+                    "Prod_Group1" : {
+                        "managed_by" : "abigail.biley",
+                        "path" : "CN=Users,DC=prod,DC=local"
                     },
-                    "Testing" : {
-                        "path" : "CN=Users,DC=labbtest,DC=local"
+                    "Prod_Group2" : {
+                        "path" : "CN=Users,DC=prod,DC=local"
                     }
                 }
             },
             "multi_domain_groups_member" : {
-                "Management" : [
-                    "dev.labb.local\\tyra.Norrqvist",
-                    "labb.local\\sammy.holmberg",
-                    "labbtest.local\\lukas.skeppsberg"
+                "Prod_Group1" : [
+                    "dev.labb.local\\molly.walsh",
+                    "labb.local\\alexander.alsop",
+                    "prod.local\\abigail.biley"
                 ],
-                "Testing" : [
-                    "labb.local\\Labbtest_FIN_Users"
+                "Prod_Group2" : [
+                    "labb.local\\Group8"
                 ]
             },
             "acls" : {
-                "GenericAll_sam_frans" : {"for": "sam.vallholm", "to": "frans.ekeas", "right": "GenericAll", "inheritance": "None"},
-                "GenericAll_testing_arvid" : {"for": "Testing", "to": "arvid.ramudde", "right": "GenericAll", "inheritance": "None"},
-                "GenericAll_sam_esc4" : {"for": "sam.vallholm", "to": "CN=ESC4,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=labbtest,DC=local", "right": "GenericAll", "inheritance": "None"},
-                "WriteProperty_frans_domadmin" : {"for": "frans.ekeas", "to": "arvid.ramudde", "right": "WriteProperty", "inheritance": "All"}
+                "GenericAll_khal_viserys" : {"for": "lillian.morgan", "to": "dominic.morgan", "right": "GenericAll", "inheritance": "None"},
+                "GenericAll_spy_jorah" : {"for": "Prod_Group2", "to": "brandon.turner", "right": "GenericAll", "inheritance": "None"},
+                "GenericAll_khal_esc4" : {"for": "lillian.morgan", "to": "CN=ESC4,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=prod,DC=local", "right": "GenericAll", "inheritance": "None"},
+                "WriteProperty_petyer_domadmin" : {"for": "dominic.morgan", "to": "brandon.turner", "right": "WriteProperty", "inheritance": "All"}
             },
             "users" : {
-                "lukas.skeppsberg" : {
-                    "firstname"   : "lukas",
-                    "surname"     : "skeppsberg",
+                "abigail.biley" : {
+                    "firstname"   : "daenerys",
+                    "surname"     : "targaryen",
                     "password"    : "BurnThemAll!", 
                     "city"        : "-",
-                    "description" : "Lukas Skeppsberg",
-                    "groups"      : ["Labbtest_A_Users", "Domain Admins"],
-                    "path"        : "CN=Users,DC=labbtest,DC=local"
+                    "description" : "Darnerys Group1",
+                    "groups"      : ["Group1", "Domain Admins"],
+                    "path"        : "CN=Users,DC=prod,DC=local"
                 },
-                "frans.ekeas" : {
-                    "firstname"   : "frans",
-                    "surname"     : "ekeas",
+                "dominic.morgan" : {
+                    "firstname"   : "viserys",
+                    "surname"     : "targaryen",
                     "password"    : "GoldCrown",
                     "city"        : "-",
-                    "description" : "Frans Ekeås",
-                    "groups"      : ["Labbtest_A_Users"],
-                    "path"        : "CN=Users,DC=labbtest,DC=local"
+                    "description" : "Viserys Group1",
+                    "groups"      : ["Group1"],
+                    "path"        : "CN=Users,DC=prod,DC=local"
                 },
-                "sam.vallholm" : {
-                    "firstname"   : "sam",
-                    "surname"     : "vallholm",
+                "lillian.morgan" : {
+                    "firstname"   : "khal",
+                    "surname"     : "drogo",
                     "password"    : "horse",
                     "city"        : "-",
-                    "description" : "Sam Vallholm",
-                    "groups"      : ["Labbtest_R_Users"],
-                    "path"        : "CN=Users,DC=labbtest,DC=local"
+                    "description" : "Khal Drogo",
+                    "groups"      : ["Group2"],
+                    "path"        : "CN=Users,DC=prod,DC=local"
                 },
-                "arvid.ramudde" : {
-                    "firstname"   : "arvid",
-                    "surname"     : "ramudde",
+                "brandon.turner" : {
+                    "firstname"   : "jorah",
+                    "surname"     : "mormont",
                     "password"    : "H0nnor!",
                     "city"        : "-",
-                    "description" : "Arvid Ramudde",
-                    "groups"      : ["Labbtest_A_Users"],
-                    "path"        : "CN=Users,DC=labbtest,DC=local"
+                    "description" : "Jorah Group5",
+                    "groups"      : ["Group1"],
+                    "path"        : "CN=Users,DC=prod,DC=local"
                 },
                 "sql_svc" : {
                     "firstname"   : "sql",
@@ -226,148 +226,148 @@
                     "city"        : "-",
                     "description" : "sql service",
                     "groups"      : [],
-                    "path"        : "CN=Users,DC=labbtest,DC=local",
-                    "spns"        : ["MSSQLSvc/srv03.labbtest.local:1433","MSSQLSvc/srv03.labbtest.local"]
+                    "path"        : "CN=Users,DC=prod,DC=local",
+                    "spns"        : ["MSSQLSvc/srv03.prod.local:1433","MSSQLSvc/srv03.prod.local"]
                 }
             }
         },
         "dev.labb.local" : {
             "dc": "dc02",
             "domain_password" : "NgtI75cKV+Pu",
-            "netbios_name": "DEV",
+            "netbios_name": "dev",
             "trust" : "",
             "organisation_units" : {},
             "groups" : {
                 "universal" : {},
                 "global" : {
-                    "Dev_Labb_A_Users" : {
-                        "managed_by" : "max.karlhammar",
-                        "path" : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "Group3" : {
+                        "managed_by" : "bella.bond",
+                        "path" : "CN=Users,DC=dev,DC=labb,DC=local"
                     },
-                    "Dev_Labb_R_Users" : {
-                        "managed_by" : "nova.fredkrok",
-                        "path" : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "Group4" : {
+                        "managed_by" : "donna.hughes",
+                        "path" : "CN=Users,DC=dev,DC=labb,DC=local"
                     },
-                    "Dev_Labb_Special_Users" : {
-                        "managed_by" : "nova.fredkrok",
-                        "path" : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "Group5" : {
+                        "managed_by" : "donna.hughes",
+                        "path" : "CN=Users,DC=dev,DC=labb,DC=local"
                     }
                 },
                 "domainlocal" : {
-                    "Management" : {
-                        "path" : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "Dev_Group1" : {
+                        "path" : "CN=Users,DC=dev,DC=labb,DC=local"
                     }
                 }
             },
             "multi_domain_groups_member" : {
-                "Management" : [
-                    "labbtest.local\\lukas.skeppsberg"
+                "Dev_Group1" : [
+                    "prod.local\\abigail.biley"
                 ]
             },
             "acls" : {
-                "anonymous_rpc" : {"for": "NT AUTHORITY\\ANONYMOUS LOGON", "to": "DC=DEV,DC=labb,DC=local", "right": "ReadProperty", "inheritance": "All"},
-                "anonymous_rpc2" : {"for": "NT AUTHORITY\\ANONYMOUS LOGON", "to": "DC=DEV,DC=labb,DC=local", "right": "GenericExecute", "inheritance": "All"}
+                "anonymous_rpc" : {"for": "NT AUTHORITY\\ANONYMOUS LOGON", "to": "DC=dev,DC=labb,DC=local", "right": "ReadProperty", "inheritance": "All"},
+                "anonymous_rpc2" : {"for": "NT AUTHORITY\\ANONYMOUS LOGON", "to": "DC=dev,DC=labb,DC=local", "right": "GenericExecute", "inheritance": "All"}
             },
             "users" : {
-                "ines.loftorp" : {
-                    "firstname"   : "Ines",
-                    "surname"     : "Loftorp",
+                "maria.lewis" : {
+                    "firstname"   : "Arya",
+                    "surname"     : "Group3",
                     "password"    : "Needle",
-                    "city"        : "-",
-                    "description" : "Ines Löftorp",
-                    "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "city"        : "dc02",
+                    "description" : "Arya Group3",
+                    "groups"      : ["Group3"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "max.karlhammar" : {
-                    "firstname"   : "Max",
-                    "surname"     : "Karlhammar",
+                "bella.bond" : {
+                    "firstname"   : "Eddard",
+                    "surname"     : "Group3",
                     "password"    : "FightP3aceAndHonor!",
-                    "city"        : "-",
-                    "description" : "Max Karlhammar",
-                    "groups"      : ["Dev_Labb_A_Users", "Domain Admins"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "city"        : "King's Landing",
+                    "description" : "Eddard Group3",
+                    "groups"      : ["Group3", "Domain Admins"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "selin.svarto" : {
-                    "firstname"   : "Selin",
-                    "surname"     : "Svarto",
+                "alexandr.russell" : {
+                    "firstname"   : "Catelyn",
+                    "surname"     : "Group3",
                     "password"    : "robbsansabradonaryarickon",
-                    "city"        : "-",
-                    "description" : "Selin Svartö",
-                    "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "city"        : "King's Landing",
+                    "description" : "Catelyn Group3",
+                    "groups"      : ["Group3"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "elliot.ringlycke" : {
-                    "firstname"   : "Elliot",
-                    "surname"     : "Ringlycke",
+                "keith.morgan" : {
+                    "firstname"   : "Robb",
+                    "surname"     : "Group3",
                     "password"    : "sexywolfy",
-                    "city"        : "-",
-                    "description" : "Elliot Ringlycke",
-                    "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "city"        : "dc02",
+                    "description" : "Robb Group3",
+                    "groups"      : ["Group3"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "signe.backhamn" : {
-                    "firstname"   : "Signe",
-                    "surname"     : "Backhamn",
+                "kimberly.parsons" : {
+                    "firstname"   : "Sansa",
+                    "surname"     : "Group3",
                     "password"    : "awomannocry",
-                    "city"        : "-",
-                    "description" : "Signe Backhamn",
-                    "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "city"        : "dc02",
+                    "description" : "Sansa Group3",
+                    "groups"      : ["Group3"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "douglas.backby" : {
-                    "firstname"   : "Douglas",
-                    "surname"     : "Backby",
+                "nicola.bower" : {
+                    "firstname"   : "Brandon",
+                    "surname"     : "Group3",
                     "password"    : "iseedeadpeople",
-                    "city"        : "-",
-                    "description" : "Douglas Bäckby",
-                    "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "city"        : "dc02",
+                    "description" : "Brandon Group3",
+                    "groups"      : ["Group3"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "kim.stensson" : {
-                    "firstname"   : "Kim",
-                    "surname"     : "Stensson",
+                "brian.stewart" : {
+                    "firstname"   : "Rickon",
+                    "surname"     : "Group3",
                     "password"    : "snowball",
-                    "city"        : "-",
-                    "description" : "Kim Stensson",
-                    "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "city"        : "dc02",
+                    "description" : "Rickon Group3",
+                    "groups"      : ["Group3"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "elvin.vallhem" : {
-                    "firstname"   : "elvin.vallhem",
-                    "surname"     : "elvin.vallhem",
-                    "password"    : "Sommar2022!",
-                    "city"        : "-",
-                    "description" : "Elvin Vallhem",
-                    "groups"      : ["Dev_Labb_A_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                "keith.ince" : {
+                    "firstname"   : "keith.ince",
+                    "surname"     : "keith.ince",
+                    "password"    : "keith.ince",
+                    "city"        : "dc02",
+                    "description" : "Brainless Giant",
+                    "groups"      : ["Group3"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "tyra.Norrqvist" : {
-                    "firstname"   : "Tyra",
-                    "surname"     : "Norrqvist",
+                "molly.walsh" : {
+                    "firstname"   : "Jon",
+                    "surname"     : "Snow",
                     "password"    : "iknownothing",
-                    "city"        : "-",
-                    "description" : "Tyra Norrqvist",
-                    "groups"      : ["Dev_Labb_A_Users", "Dev_Labb_R_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local",
-                    "spns"        : ["HTTP/test.dev.labb.local"]
+                    "city"        : "Castel Black",
+                    "description" : "Jon Snow",
+                    "groups"      : ["Group3", "Group4"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local",
+                    "spns"        : ["HTTP/thewall.dev.labb.local"]
                 },
-                "teodor.ragroth" : {
-                    "firstname"   : "Teodor",
-                    "surname"     : "Ragroth",
-                    "password"    : "Snappie19#",
-                    "city"        : "-",
-                    "description" : "Teodor Ragroth (Password : Snappie19#)",
-                    "groups"      : ["Dev_Labb_R_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                "bella.buckland" : {
+                    "firstname"   : "Samwell",
+                    "surname"     : "Tarly",
+                    "password"    : "Heartsbane",
+                    "city"        : "Castel Black",
+                    "description" : "Samwell Tarly (Password : Heartsbane)",
+                    "groups"      : ["Group4"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
-                "nova.fredkrok" : {
-                    "firstname"   : "Nova",
-                    "surname"     : "Fredkrok",
+                "donna.hughes" : {
+                    "firstname"   : "Jeor",
+                    "surname"     : "Group5",
                     "password"    : "_L0ngCl@w_",
-                    "city"        : "-",
-                    "description" : "Nova Fredkrok",
-                    "groups"      : ["Dev_Labb_R_Users", "Dev_Labb_Special_Users"],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local"
+                    "city"        : "Castel Black",
+                    "description" : "Jeor Group5",
+                    "groups"      : ["Group4", "Group5"],
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local"
                 },
                 "sql_svc" : {
                     "firstname"   : "sql",
@@ -376,38 +376,38 @@
                     "city"        : "-",
                     "description" : "sql service",
                     "groups"      : [],
-                    "path"        : "CN=Users,DC=DEV,DC=labb,DC=local",
+                    "path"        : "CN=Users,DC=dev,DC=labb,DC=local",
                     "spns"        : ["MSSQLSvc/srv02.dev.labb.local:1433","MSSQLSvc/srv02.dev.labb.local"]
                 }
             }
         },
         "labb.local" : {
             "dc": "dc01",
-            "domain_password" : "P@ssw0rd",
-            "netbios_name": "LABB",
-            "trust" : "labbtest.local",
+            "domain_password" : "8dCT-DJjgScp",
+            "netbios_name": "labb",
+            "trust" : "prod.local",
             "organisation_units" : {
-                "Management"  : { "path" : "DC=labb,DC=local"},
-                "HR"          : { "path" : "DC=labb,DC=local"},
-                "Development" : { "path" : "DC=labb,DC=local"},
-                "Finance"     : { "path" : "DC=labb,DC=local"},
+                "Management"        : { "path" : "DC=labb,DC=local"},
+                "HR" : { "path" : "DC=labb,DC=local"},
+                "Development"  : { "path" : "DC=labb,DC=local"},
+                "Finance"  : { "path" : "DC=labb,DC=local"},
                 "Operations"  : { "path" : "DC=labb,DC=local"},
-                "Interns"     : { "path" : "DC=labb,DC=local"},
-                "Old"         : { "path" : "DC=labb,DC=local"},
-                "Test"        : { "path" : "DC=labb,DC=local"}
+                "Interns" : { "path" : "DC=labb,DC=local"},
+                "Old"       : { "path" : "DC=labb,DC=local"},
+                "Test"       : { "path" : "DC=labb,DC=local"}
             },
             "groups" : {
                 "universal" : {},
                 "global" : {
-                    "Labbtest_A_Users" : {
-                        "managed_by" : "vide.gustafsson",
+                    "Group6" : {
+                        "managed_by" : "sean.coleman",
                         "path" : "OU=Interns,DC=labb,DC=local"
                     },
-                    "Labbtest_R_Users" : {
-                        "managed_by" : "kasper.nyman",
+                    "Group7" : {
+                        "managed_by" : "edward.duncan",
                         "path" : "OU=Operations,DC=labb,DC=local"
                     },
-                    "Labbtest_FIN_Users" : {
+                    "Group8" : {
                         "path" : "OU=Finance,DC=labb,DC=local"
                     }
                 },
@@ -417,115 +417,115 @@
             "multi_domain_groups_member" : {
             },
             "acls" : {
-                "GenericAll_vide_tomas" : {"for": "vide.gustafsson", "to": "tomas.mansson", "right": "GenericAll", "inheritance": "None"},
-                "GenericAll_lilly_domadmin" : {"for": "lilly.lundberg", "to": "Domain Admins", "right": "GenericAll", "inheritance": "None"},
-                "GenericAll_lotta_dc" : {"for": "lotta.magnusson", "to": "dc01$", "right": "GenericAll", "inheritance": "None"},
-                "WriteProperty_oscar_domadmin" : {"for": "oscar.lindgren", "to": "Domain Admins", "right": "WriteProperty", "inheritance": "All"},
-                "self-self-membership-on-group_sammy_domadmin" : {"for": "sammy.holmberg", "to": "Domain Admins", "right": "Ext-Self-Self-Membership", "inheritance": "None"},
-                "writeproperty-self-membership_lotta_domadmin" : {"for": "lotta.magnusson", "to": "Domain Admins", "right": "Ext-Write-Self-Membership", "inheritance": "All"},
-                "forcechangepassword_vide_ellinore" : {"for": "vide.gustafsson", "to": "ellinore.jonasson", "right": "Ext-User-Force-Change-Password", "inheritance": "None"},
-                "write_on_group_alexsander_domadmin" : {"for": "alexsander.blom", "to": "Domain Admins", "right": "WriteOwner", "inheritance": "None"},
-                "GenericWrite_on_user_tomas_ellinore" : {"for": "ellinore.jonasson", "to": "tomas.mansson", "right": "GenericWrite", "inheritance": "None"},
-                "Writedacl_Labbtest_FIN_Users" : {"for": "vide.gustafsson", "to": "Labbtest_FIN_Users", "right": "WriteDacl", "inheritance": "None"}
+                "GenericAll_tywin_cersei" : {"for": "sean.coleman", "to": "joe.peake", "right": "GenericAll", "inheritance": "None"},
+                "GenericAll_varys_domadmin" : {"for": "andrea.campbell", "to": "Domain Admins", "right": "GenericAll", "inheritance": "None"},
+                "GenericAll_stanis_dc" : {"for": "joseph.manning", "to": "dc01$", "right": "GenericAll", "inheritance": "None"},
+                "WriteProperty_petyer_domadmin" : {"for": "chloe.hemmings", "to": "Domain Admins", "right": "WriteProperty", "inheritance": "All"},
+                "self-self-membership-on-group_tyron_domadmin" : {"for": "alexander.alsop", "to": "Domain Admins", "right": "Ext-Self-Self-Membership", "inheritance": "None"},
+                "writeproperty-self-membership_stanis_stannis" : {"for": "joseph.manning", "to": "Domain Admins", "right": "Ext-Write-Self-Membership", "inheritance": "All"},
+                "forcechangepassword_tywin_jaime" : {"for": "sean.coleman", "to": "luke.paige", "right": "Ext-User-Force-Change-Password", "inheritance": "None"},
+                "write_on_group_pycelle_domadmin" : {"for": "penelope.vaughan", "to": "Domain Admins", "right": "WriteOwner", "inheritance": "None"},
+                "GenericWrite_on_user_jaimie_cersei" : {"for": "luke.paige", "to": "joe.peake", "right": "GenericWrite", "inheritance": "None"},
+                "Writedacl_tywin_council" : {"for": "sean.coleman", "to": "Group8", "right": "WriteDacl", "inheritance": "None"}
             },
             "users" : {
-                "vide.gustafsson" : {
-                    "firstname"   : "Vide",
-                    "surname"     : "Gustafsson",
+                "sean.coleman" : {
+                    "firstname"   : "Tywin",
+                    "surname"     : "Lanister",
                     "password"    : "powerkingftw135",
-                    "city"        : "-",
-                    "description" : "Vide Gustafsson",
-                    "groups"      : ["Labbtest_A_Users"],
+                    "city"        : "Casterly Rock",
+                    "description" : "Tywin Lanister",
+                    "groups"      : ["Group6"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "ellinore.jonasson" : {
-                    "firstname"   : "Ellinore",
-                    "surname"     : "Jonasson",
+                "luke.paige" : {
+                    "firstname"   : "Jaime",
+                    "surname"     : "Lanister",
                     "password"    : "cersei",
-                    "city"        : "-",
-                    "description" : "Ellinore Jonasson",
-                    "groups"      : ["Labbtest_A_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Jaime Lanister",
+                    "groups"      : ["Group6"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "tomas.mansson" : {
-                    "firstname"   : "Tomas",
-                    "surname"     : "Mansson",
+                "joe.peake" : {
+                    "firstname"   : "Cersei",
+                    "surname"     : "Lanister",
                     "password"    : "il0vejaime",
-                    "city"        : "-",
-                    "description" : "Tomas Månsson",
-                    "groups"      : ["Labbtest_A_Users","Labbtest_R_Users","Domain Admins","Labbtest_FIN_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Cersei Lanister",
+                    "groups"      : ["Group6","Group7","Domain Admins","Group8"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "sammy.holmberg" : {
-                    "firstname"   : "Sammy",
-                    "surname"     : "Holmberg",
+                "alexander.alsop" : {
+                    "firstname"   : "Tyron",
+                    "surname"     : "Lanister",
                     "password"    : "Alc00L&S3x",
-                    "city"        : "-",
-                    "description" : "Sammy Holmberg",
-                    "groups"      : ["Labbtest_A_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Tyron Lanister",
+                    "groups"      : ["Group6"],
                     "path"        : "OU=Interns,DC=labb,DC=local"
                 },
-                "kasper.nyman" : {
-                    "firstname"   : "Kasper",
-                    "surname"     : "Nyman",
+                "edward.duncan" : {
+                    "firstname"   : "Robert",
+                    "surname"     : "Group7",
                     "password"    : "iamthekingoftheworld",
-                    "city"        : "-",
-                    "description" : "Kasper Nyman",
-                    "groups"      : ["Labbtest_R_Users","Domain Admins","Labbtest_FIN_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Robert Lanister",
+                    "groups"      : ["Group7","Domain Admins","Group8"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "mats.berggren" : {
-                    "firstname"   : "Mats",
-                    "surname"     : "Berggren",
+                "victor.simpson" : {
+                    "firstname"   : "Joffrey",
+                    "surname"     : "Group7",
                     "password"    : "1killerlion",
-                    "city"        : "-",
-                    "description" : "Mats Berggren",
-                    "groups"      : ["Labbtest_R_Users","Labbtest_A_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Joffrey Group7",
+                    "groups"      : ["Group7","Group6"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "cornelis.forsberg" : {
-                    "firstname"   : "Cornelis",
-                    "surname"     : "Forsberg",
+                "rose.anderson" : {
+                    "firstname"   : "Renly",
+                    "surname"     : "Group7",
                     "password"    : "lorastyrell",
-                    "city"        : "-",
-                    "description" : "Cornelis Forsberg",
-                    "groups"      : ["Labbtest_R_Users","Labbtest_FIN_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Renly Group7",
+                    "groups"      : ["Group7","Group8"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "lotta.magnusson" : {
-                    "firstname"   : "Lotta",
-                    "surname"     : "Magnusson",
+                "joseph.manning" : {
+                    "firstname"   : "Stannis",
+                    "surname"     : "Group7",
                     "password"    : "Drag0nst0ne",
-                    "city"        : "-",
-                    "description" : "Lotta Magnusson",
-                    "groups"      : ["Labbtest_R_Users","Labbtest_FIN_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Stannis Group7",
+                    "groups"      : ["Group7","Group8"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "oscar.lindgren" : {
-                    "firstname"   : "Oscar",
-                    "surname"     : "Lindgren",
+                "chloe.hemmings" : {
+                    "firstname"   : "Petyer",
+                    "surname"     : "Baelish",
                     "password"    : "@littlefinger@",
-                    "city"        : "-",
-                    "description" : "Oscar Lindgren",
-                    "groups"      : ["Labbtest_FIN_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Petyer Baelish",
+                    "groups"      : ["Group8"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "lilly.lundberg" : {
-                    "firstname"   : "Lilly",
-                    "surname"     : "Lundberg",
+                "andrea.campbell" : {
+                    "firstname"   : "Lord",
+                    "surname"     : "Varys",
                     "password"    : "_W1sper_$",
-                    "city"        : "-",
-                    "description" : "Lilly Lundberg",
-                    "groups"      : ["Labbtest_FIN_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Lord Varys",
+                    "groups"      : ["Group8"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 },
-                "alexsander.blom" : {
-                    "firstname"   : "Alexsander",
-                    "surname"     : "Blom",
+                "penelope.vaughan" : {
+                    "firstname"   : "Maester",
+                    "surname"     : "Pycelle",
                     "password"    : "MaesterOfMaesters",
-                    "city"        : "-",
-                    "description" : "Alexsander Blom",
-                    "groups"      : ["Labbtest_FIN_Users"],
+                    "city"        : "King's Landing",
+                    "description" : "Maester Pycelle",
+                    "groups"      : ["Group8"],
                     "path"        : "OU=Finance,DC=labb,DC=local"
                 }
             }

@@ -35,7 +35,7 @@ dict_key=srv02
 192.168.56.22
 
 ; ------------------------------------------------
-; labbtest.local
+; prod.local
 [dc03:vars]
 dns_domain=192.168.56.12
 dict_key=dc03

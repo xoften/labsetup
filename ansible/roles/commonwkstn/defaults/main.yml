@@ -2,6 +2,6 @@
 # used for installing Powershell 5.0 in this role.
 ansible_become_password: vagrant
 ansible_become_user: vagrant
-hostname: casterlyrock
-main_ou: kingdoms
-domain_ou_path: "OU=Computers,OU=North,OU={{main_ou}},DC={{domain_name_dc}},DC=local"
+hostname: srv01
+main_ou: labb
+domain_ou_path: "OU=Computers,OU=dev,OU={{main_ou}},DC={{domain_name_dc}},DC=local"

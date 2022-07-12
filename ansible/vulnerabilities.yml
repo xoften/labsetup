@@ -4,7 +4,7 @@
   vars:
     data_path: "../ad/{{domain_name}}/data/"
 
-# sevenkingdoms.local
+# labb.local
 - name: "Setup vulnerabilities dc01"
   hosts: dc01
   roles:
@@ -18,7 +18,7 @@
   vars:
     script_path: "../ad/{{domain_name}}/scripts"
 
-# north.sevenkingdoms.local
+# dev.labb.local
 - name: "Setup vulnerabilities dc02"
   hosts: dc02
   roles:
@@ -42,7 +42,7 @@
     script_path: "../ad/{{domain_name}}/scripts"
 
 
-# essos.local
+# prod.local
 - name: "Setup vulnerabilities dc03"
   hosts: dc03
   roles:

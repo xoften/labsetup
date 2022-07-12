@@ -64,14 +64,14 @@ ansible-galaxy install -r requirements.yml
 - Chocolatey is no more used and basic tools like git or notepad++ are no more installed by default (as chocolatey regulary crash the install due to hiting rate on multiples builds)
 - ELK is no more installed by default to save ressources but you still can install it separately (see the blueteam/elk part)
 - Dragonstone vm as disapear and there is no more DC replication in the lab to save resources
-- Wintefell is now a domain controler for the subdomain north of the sevenkingdoms.local domain
+- Wintefell is now a domain controler for the subdomain dev of the labb.local domain
 
 ### Space use
 - the lab take environ 77GB (but you have to get the space for the vms vagrant images windows server 2016 (22GB) / windows server 2019 (14GB) / ubuntu 18.04 (502M))
 - the total space needed for the lab is ~115 GB (and more if you take snapshots)
 
 ### Start / Setup
-The default domain will be **sevenkingdoms.local**, on the subnet 192.168.56.1/24 and each machine has only been allocated with 1CPU and 1024MB of memory. If you want to change some of these performance settings you can modify the Vagrantfile.
+The default domain will be **labb.local**, on the subnet 192.168.56.1/24 and each machine has only been allocated with 1CPU and 1024MB of memory. If you want to change some of these performance settings you can modify the Vagrantfile.
 
 To have the lab up and running this is the commands you should do:
 
@@ -100,7 +100,7 @@ ansible-playbook ad-trusts.yml    # create the trust relationships
 ansible-playbook ad-data.yml      # import the ad datas : users/groups...
 ansible-playbook servers.yml      # Install IIS and MSSQL
 ansible-playbook ad-relations.yml # set the rights and the group domains relations
-ansible-playbook adcs.yml         # Install ADCS on essos
+ansible-playbook adcs.yml         # Install ADCS on prod
 ansible-playbook ad-acl.yml       # set the ACE/ACL
 ansible-playbook security.yml     # Configure some securities (adjust av enable/disable)
 ansible-playbook vulns.yml        # Configure some vulnerabilities
@@ -123,28 +123,28 @@ vagrant up   # will start the lab
 ansible-playbook main.yml
 ```
 
-## LAB Content - sevenkingdoms.local / north.sevenkingdoms.local / essos.local
+## LAB Content - labb.local / dev.labb.local / prod.local
 
 ![v2_overview.png](./docs/img/v2_overview.png)
 
 ### Servers
 This lab is actually composed of five virtual machines:
-- **kingslanding** : DC01  running on Windows Server 2019 (with windefender enabled by default)
-- **winterfell**   : DC02  running on Windows Server 2019 (with windefender enabled by default)
-- **castelblack**  : SRV02 running on Windows Server 2019 (with windefender **disabled** by default)
-- **meereen**      : DC03  running on Windows Server 2016 (with windefender enabled by default)
-- **braavos**      : SRV03 running on Windows Server 2016 (with windefender enabled by default)
+- **dc01** : DC01  running on Windows Server 2019 (with windefender enabled by default)
+- **dc02**   : DC02  running on Windows Server 2019 (with windefender enabled by default)
+- **srv02**  : SRV02 running on Windows Server 2019 (with windefender **disabled** by default)
+- **dc03**      : DC03  running on Windows Server 2016 (with windefender enabled by default)
+- **srv03**      : SRV03 running on Windows Server 2016 (with windefender enabled by default)
 
-#### domain : north.sevenkingdoms.local
-- **winterfell**     : DC01
-- **castelblack**    : SRV02 : MSSQL / IIS
+#### domain : dev.labb.local
+- **dc02**     : DC01
+- **srv02**    : SRV02 : MSSQL / IIS
 
-#### domain : sevenkingdoms.local
-- **kingslanding**   : DC02
+#### domain : labb.local
+- **dc01**   : DC02
 - **castelrock**     : SRV01 (disabled due to resources reasons)
 
-#### domain : essos.local
-- **braavos**        : DC03
+#### domain : prod.local
+- **srv03**        : DC03
 - **meeren**         : SRV03 : MSSQL / ADCS
 
 
@@ -178,90 +178,90 @@ ansible-playbook elk.yml
 
 ### Users/Groups and associated vulnerabilites/scenarios
 
-NORTH.SEVENKINGDOMS.LOCAL
+dev.labb.LOCAL
 - STARKS
-  - arya.stark:        Execute as user on mssql
-  - eddard.stark:      DOMAIN ADMIN NORTH/ (bot 5min) LLMRN request to do NTLM relay with responder
-  - catelyn.stark:     
-  - robb.stark:        bot (3min) RESPONDER LLMR
-  - sansa.stark:       
-  - brandon.stark:     ASREP_ROASTING
-  - rickon.stark:      GPO abuse (Edit Settings on "ChangeWallpaperInBlue" GPO)
+  - kevin.randall:        Execute as user on mssql
+  - melanie.johnston:      DOMAIN ADMIN dev/ (bot 5min) LLMRN request to do NTLM relay with responder
+  - zoea.newman:     
+  - jack.piper:        bot (3min) RESPONDER LLMR
+  - yvonne.ball:       
+  - piers.black:     ASREP_ROASTING
+  - blake.tucker:      GPO abuse (Edit Settings on "ChangeWallpaperInBlue" GPO)
   - theon.greyjoy:
-  - jon.snow:          mssql admin / KERBEROASTING / group cross domain / mssql trusted link
-  - hodor:             PASSWORD SPRAY (user=password)
+  - leah.mitchell:          mssql admin / KERBEROASTING / group cross domain / mssql trusted link
+  - adrian.jackson:             PASSWORD SPRAY (user=password)
 - NIGHT WATCH
-  - samwell.tarly:     Password in ldap description / mssql execute as login
-  - jon.snow:          (see starks)
-  - jeor.mormont:      (see mormont)
+  - tim.butler:     Password in ldap description / mssql execute as login
+  - leah.mitchell:          (see starks)
+  - nathan.berry:      (see mormont)
 - MORMONT
-  - jeor.mormont:      ACL writedacl-writeowner on group Night Watch
-- AcrossTheSea :       cross forest group
+  - nathan.berry:      ACL writedacl-writeowner on group Group4
+- Dev_Group1 :       cross forest group
 
-SEVENKINGDOMS.LOCAL
+labb.LOCAL
 - LANISTERS
-  - tywin.lannister:   ACL genericall-on-user cersei.lannister / ACL forcechangepassword on jaime.lanister
-  - jaime.lannister:   ACL genericwrite-on-user cersei.lannister
-  - tyron.lannister:   ACL self-self-membership-on-group Domain Admins
-  - cersei.lannister:  DOMAIN ADMIN SEVENKINGDOMS
+  - colin.knox:   ACL genericall-on-user sean.harris / ACL forcechangepassword on jaime.lanister
+  - elizabeth.forsyth:   ACL genericwrite-on-user sean.harris
+  - irene.duncan:   ACL self-self-membership-on-group Domain Admins
+  - sean.harris:  DOMAIN ADMIN labb
 - BARATHEON
-  - robert.baratheon:  DOMAIN ADMIN SEVENKINGDOMS
-  - joffrey.baratheon: 
-  - renly.baratheon:
-  - stannis.baratheon: ACL genericall-on-computer kingslanding / ACL writeproperty-self-membership Domain Admins
+  - benjamin.robertson:  DOMAIN ADMIN labb
+  - katherine.gibson: 
+  - carol.russell:
+  - jasmine.lewis: ACL genericall-on-computer dc01 / ACL writeproperty-self-membership Domain Admins
 - SMALL COUNCIL
-  - petyer.baelish:    ACL writeproperty-on-group Domain Admins
-  - lord.varys:        ACL genericall-on-group Domain Admins
-  - maester.pycelle:   ACL write owner on group Domain Admins
+  - alexander.sharp:    ACL writeproperty-on-group Domain Admins
+  - rebecca.peake:        ACL genericall-on-group Domain Admins
+  - sally.paterson:   ACL write owner on group Domain Admins
 
-ESSOS.LOCAL
+prod.LOCAL
 - TARGERYEN
-  - daenerys.targaryen: DOMAIN ADMIN ESSOS
-  - viserys.targaryen:  
-  - jorah.mormont:      mssql trusted link
+  - ian.abraham: DOMAIN ADMIN prod
+  - emma.short:  
+  - carol.ellison:      mssql trusted link
 - DOTHRAKI
-  - khal.drogo:         mssql admin / GenericAll on viserys (shadow credentials) / GenericAll on ECS4
-- DragonsFriends:       cross forest group
-- Spys:                 cross forest group
+  - nicholas.grant:         mssql admin / GenericAll on viserys (shadow credentials) / GenericAll on ECS4
+- Prod_Group1:       cross forest group
+- Prod_Group2:                 cross forest group
 
 ### Computers Users and group permissions
 
-- SEVENKINGDOMS
-  - DC01 : kingslanding.sevenkingdoms.local (Windows Server 2019) (SEVENKINGDOMS DC)
-    - Admins : robert.baratheon (U), cersei.lannister (U)
-    - RDP: Small Council (G)
+- labb
+  - DC01 : dc01.labb.local (Windows Server 2019) (labb DC)
+    - Admins : benjamin.robertson (U), sean.harris (U)
+    - RDP: Group8 (G)
 
-- NORTH
-  - DC02 : winterfell.north.sevenkingdoms.local (Windows Server 2019) (NORTH DC)
-    - Admins : eddard.stark (U), catelyn.stark (U), robb.stark (U)
-    - RDP: Stark(G)
+- dev
+  - DC02 : dc02.dev.labb.local (Windows Server 2019) (dev DC)
+    - Admins : melanie.johnston (U), zoea.newman (U), jack.piper (U)
+    - RDP: Group3(G)
 
-  - SRV02 : castelblack.essos.local (Windows Server 2019) (IIS, MSSQL, SMB share)
-    - Admins: jeor.mormont (U)
-    - RDP: Night Watch (G), Mormont (G), Stark (G)
+  - SRV02 : srv02.prod.local (Windows Server 2019) (IIS, MSSQL, SMB share)
+    - Admins: nathan.berry (U)
+    - RDP: Group4 (G), Group5 (G), Group3 (G)
     - IIS : allow asp upload, run as NT Authority/network
     - MSSQL:
-      - admin : jon.snow
+      - admin : leah.mitchell
       - impersonate : 
         - execute as login : samwel.tarlly -> sa
-        - execute as user : arya.stark -> dbo
+        - execute as user : kevin.randall -> dbo
       - link :
-        - to braavos : jon.snow -> sa
+        - to srv03 : leah.mitchell -> sa
 
-- ESSOS
-  - DC03  : meereen.essos.local (Windows Server 2016) (ESSOS DC)
-    - Admins: daenerys.targaryen (U)
-    - RDP: Targaryen (G)
+- prod
+  - DC03  : dc03.prod.local (Windows Server 2016) (prod DC)
+    - Admins: ian.abraham (U)
+    - RDP: Group1 (G)
 
-  - SRV03 : braavos.essos.local (Windows Server 2016) (MSSQL, SMB share)
-    - Admins: khal.drogo (U)
-    - RDP: Dothraki (G)
+  - SRV03 : srv03.prod.local (Windows Server 2016) (MSSQL, SMB share)
+    - Admins: nicholas.grant (U)
+    - RDP: Group2 (G)
     - MSSQL :
-      - admin : khal.drogo
+      - admin : nicholas.grant
       - impersonate :
-        - execute as login : jorah.mormont -> sa
+        - execute as login : carol.ellison -> sa
       - link:
-        - to castelblack: jorah.mormont -> sa
+        - to srv02: carol.ellison -> sa
 
 
 ## ROAD MAP
@@ -310,7 +310,7 @@ ESSOS.LOCAL
 
 - On dragonstone play as domain admin user :
 ```
-repadmin /replicate kingslanding.sevenkingdoms.local dragonstone.sevenkingdoms.local dc=sevenkingdoms,dc=local /full
+repadmin /replicate dc01.labb.local dragonstone.labb.local dc=labb,dc=local /full
 ```
 
 ### vagrant usefull commands (vm management)
@@ -399,7 +399,7 @@ ansible-galaxy collection install ansible.windows --force
 ### winrm
 
 ```bash
-PLAY [DC01 - kingslanding] *******************************************************
+PLAY [DC01 - dc01] *******************************************************
 
  
 
@@ -409,7 +409,7 @@ fatal: [192.168.56.10]: FAILED! => {"msg": "winrm or requests is not installed: 
  
 
 PLAY RECAP ***********************************************************************
-192.168.56.10              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.56.10              : ok=0    changed=0    unOldable=0    failed=1    skipped=0    rescued=0    ignored=0   
 ```
 
 solution : pip install pywinrm
@@ -431,9 +431,9 @@ solution : wait or if crashed then re-run Ansible script
 ### Domain controller : ensure Users are present 
 
 ```bash
-TASK [domain_controller : Ensure that Users presents in ou=<kingdom>,dc=SEVENKINGDOMS,dc=local] ***************************************************************************
+TASK [domain_controller : Ensure that Users presents in ou=<kingdom>,dc=labb,dc=local] ***************************************************************************
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was:    at Microsoft.ActiveDirectory.Management.Commands.ADCmdletBase`1.ProcessRecord()
-failed: [192.168.56.10] (item={u'key': u'lord.varys', u'value': {u'city': u"King's Landing", u'password': u'_W1sper_$', u'name': u'Lord Varys', u'groups': u'Small Council', u'path': u'OU=Users,OU=Crownlands,OU=kingdoms,DC=SEVENKINGDOMS,DC=local'}}) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "lord.varys", "value": {"city": "King's Landing", "groups": "Small Council", "name": "Lord Varys", "password": "_W1sper_$", "path": "OU=Users,OU=Crownlands,OU=kingdoms,DC=SEVENKINGDOMS,DC=local"}}, "msg": "Unhandled exception while executing module: An unspecified error has occurred"}
+failed: [192.168.56.10] (item={u'key': u'rebecca.peake', u'value': {u'city': u"King's Landing", u'password': u'_W1sper_$', u'name': u'Lord Varys', u'groups': u'Group8', u'path': u'OU=Users,OU=Finance,OU=labb,DC=labb,DC=local'}}) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "rebecca.peake", "value": {"city": "King's Landing", "groups": "Group8", "name": "Lord Varys", "password": "_W1sper_$", "path": "OU=Users,OU=Finance,OU=labb,DC=labb,DC=local"}}, "msg": "Unhandled exception while executing module: An unspecified error has occurred"}
 
 ```
  solution : re-run Ansible script

@@ -1,2 +1,2 @@
-- name: Remove Group Policy Object "StarkWallpaper" to set back background image for North users
+- name: Remove Group Policy Object "Group3Wallpaper" to set back background image for dev users
   script: remove-gpo.ps1

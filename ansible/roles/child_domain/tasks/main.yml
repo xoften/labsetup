@@ -49,13 +49,13 @@
 #  win_shell: c:\\ansible\\child_domain.ps1 > c:\\ansible\\child_domain.log
 #  become: yes
 #  become_method: runas
-#  become_user: "SEVENKINGDOMS\\Administrator"
+#  become_user: "labb\\Administrator"
 #  vars:
 #    ansible_become_pass: "{{password}}"
 #  when: not domain_child_log.stat.exists
 
 - name: disable interface Ethernet before join domain
-  win_shell: netsh interface set interface "Ethernet" disable
+  win_shell: netsh interface set interface "Ethernet0" disable
 
 - name: add child domain to parent domain
   ansible.windows.win_powershell:
@@ -114,7 +114,7 @@
   when: child_result.changed
 
 - name: enable interface Ethernet after domain joined
-  win_shell: netsh interface set interface "Ethernet" enable
+  win_shell: netsh interface set interface "Ethernet0" enable
 
 - name: "Install XactiveDirectory"
   win_psmodule:
